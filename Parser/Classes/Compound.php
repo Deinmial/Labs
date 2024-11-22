@@ -2,21 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Pascal\Parser\AST;
+namespace Pascal\Parser\Classes;
 
-/**
- * Represents a `BEGIN ... END` block
- */
+// Блок BEGIN и END
 class Compound extends Node
 {
-    /** @var Node[] */
-    public array $children = [];
+    // Массив дочерних узлов, представляющих операторы внутри составного узла
+    public array $childNode = [];
 
-    /**
-     * @param Node[] $children
-     */
-    public function __construct(array $children)
+    public function __construct(array $childNode)
     {
-        $this->children = $children;
+        $this->childNode = $childNode;
     }
 }

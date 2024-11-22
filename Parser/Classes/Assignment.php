@@ -2,14 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Pascal\Parser\AST;
+namespace Pascal\Parser\Classes;
 include 'Parser/Classes/BinaryOperation.php';
-/**
- * Represents an assignment statement
- *
- * Left node represents the variable being assigned to.
- * Right node represents the value being assigned.
- */
+
+// Представляет оператор присваивания
+// Левый узел представляет присваиваемую переменную
+// Правый узел представляет присваиваемое значение
+
 class Assignment extends BinaryOperation
 {
 }

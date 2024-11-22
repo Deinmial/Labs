@@ -2,11 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Pascal\Parser\AST;
+namespace Pascal\Parser\Classes;
 
-/**
- * Represents an empty statement
- */
+// Пустая инстуркция
 class NoOperation extends Node
 {
 }
