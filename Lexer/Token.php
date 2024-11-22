@@ -6,14 +6,10 @@ namespace Pascal\Lexer;
 
 class Token
 {
-    /**
-     * @var string
-     */
+    // Тип токена
     public string $type;
 
-    /**
-     * @var string|null
-     */
+    // Значение токена
     public ?string $value;
 
     public function __construct(string $type, ?string $value = null)
@@ -22,13 +18,7 @@ class Token
         $this->value = $value;
     }
 
-    /**
-     * String representation of the class instance.
-     *
-     * Examples:
-     *      Token(INTEGER, 3)
-     *      Token(OPERATOR '+')
-     */
+    // Экземпляр класса в строковом представлении
     public function __toString(): string
     {
         return sprintf('Token(%s, %s)', $this->type, $this->value ?? '');
