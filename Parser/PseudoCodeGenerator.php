@@ -7,12 +7,12 @@ use Exception;
 class PseudoCodeGenerator {
     // Генерируем псевдокод
     public function generate($node) {
-        // Если узел является экземпляром класса, то генерируется псевдокод для его блока (block).
+        // Если узел является экземпляром класса, то генерируется псевдокод для его блока (block)
         if ($node instanceof \Pascal\Parser\Classes\Program) {
             return $this->generate($node->block);
 
         // Если узел является экземпляром класса, то генерируется псевдокод для всех объявлений переменных (declarations)
-        // и всех операторов (compoundStatement->childNode).
+        // и всех операторов (compoundStatement->childNode)
         } elseif ($node instanceof \Pascal\Parser\Classes\Block) {
             $declarations = array_map([$this, 'generate'], $node->declarations);
             $statements = array_map([$this, 'generate'], $node->compoundStatement->childNode);
