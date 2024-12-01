@@ -14,6 +14,7 @@ class PseudoCodeGenerator {
         // Если узел является экземпляром класса, то генерируется псевдокод для всех объявлений переменных (declarations)
         // и всех операторов (compoundStatement->childNode)
         } elseif ($node instanceof \Pascal\Parser\Classes\Block) {
+            // Применяем generate() к $declarations и $statements
             $declarations = array_map([$this, 'generate'], $node->declarations);
             $statements = array_map([$this, 'generate'], $node->compoundStatement->childNode);
             return implode("\n", array_merge($declarations, $statements));
